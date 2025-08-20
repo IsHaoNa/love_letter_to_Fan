@@ -1,1 +1,326 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给亲爱的大宝宝的一封信</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap');
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #f5e9dc;
+            color: #4a3c2d;
+            font-family: 'Noto Serif SC', serif;
+            line-height: 1.8;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image:
+                    radial-gradient(#d9c7b2 1px, transparent 1px),
+                    radial-gradient(#d9c7b2 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        .letter-container {
+            max-width: 800px;
+            width: 100%;
+            background: #fff9f0;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(139, 105, 75, 0.15);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .letter-paper {
+            padding: 40px;
+            position: relative;
+            background-image:
+                    linear-gradient(90deg, #f5e9dc 0px, #f5e9dc 1px, transparent 1px),
+                    linear-gradient(#f5e9dc 0px, #f5e9dc 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0;
+        }
+
+        .envelope-flap {
+            height: 40px;
+            background: #d9b89c;
+            position: relative;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 2px 10px rgba(139, 105, 75, 0.2);
+        }
+
+        .envelope-flap::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: #d9b89c;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(139, 105, 75, 0.2);
+        }
+
+        .heart {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: #e84343;
+            transform: rotate(45deg);
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .heart:before, .heart:after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background: #e84343;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -20px;
+            left: 0;
+        }
+
+        .heart:after {
+            top: 0;
+            left: -20px;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: rotate(45deg) scale(1); }
+            25% { transform: rotate(45deg) scale(1.1); }
+            50% { transform: rotate(45deg) scale(1); }
+            75% { transform: rotate(45deg) scale(1.1); }
+            100% { transform: rotate(45deg) scale(1); }
+        }
+
+        .salutation {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #8b5a2b;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .salutation::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d9b89c, transparent);
+        }
+
+        .letter-content {
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .letter-content p {
+            margin-bottom: 20px;
+            text-indent: 2em;
+            opacity: 0;
+            animation: fadeIn 0.8s forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .letter-content p:nth-child(1) { animation-delay: 0.2s; }
+        .letter-content p:nth-child(2) { animation-delay: 0.4s; }
+        .letter-content p:nth-child(3) { animation-delay: 0.6s; }
+        .letter-content p:nth-child(4) { animation-delay: 0.8s; }
+        .letter-content p:nth-child(5) { animation-delay: 1.0s; }
+        .letter-content p:nth-child(6) { animation-delay: 1.2s; }
+        .letter-content p:nth-child(7) { animation-delay: 1.4s; }
+        .letter-content p:nth-child(8) { animation-delay: 1.6s; }
+        .letter-content p:nth-child(9) { animation-delay: 1.8s; }
+        .letter-content p:nth-child(10) { animation-delay: 2.0s; }
+        .letter-content p:nth-child(11) { animation-delay: 2.2s; }
+        .letter-content p:nth-child(12) { animation-delay: 2.4s; }
+        .letter-content p:nth-child(13) { animation-delay: 2.6s; }
+        .letter-content p:nth-child(14) { animation-delay: 2.8s; }
+        .letter-content p:nth-child(15) { animation-delay: 3.0s; }
+
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            margin: 30px 0;
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d9b89c, transparent);
+            transform: translateY(-50%);
+        }
+
+        .timeline-item {
+            text-align: center;
+            background: #f5e9dc;
+            padding: 15px;
+            border-radius: 10px;
+            width: 45%;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 4px 10px rgba(139, 105, 75, 0.1);
+        }
+
+        .timeline-item h3 {
+            color: #8b5a2b;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .closing {
+            text-align: right;
+            margin-top: 40px;
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 22px;
+            color: #8b5a2b;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 20px;
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 24px;
+        }
+
+        .date {
+            text-align: right;
+            margin-top: 10px;
+            font-style: italic;
+            color: #8b6945;
+        }
+
+        @media (max-width: 768px) {
+            .letter-paper {
+                padding: 25px;
+            }
+
+            .letter-content {
+                font-size: 16px;
+            }
+
+            .timeline {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item {
+                width: 100%;
+            }
+
+            .salutation {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="letter-container">
+    <div class="envelope-flap"></div>
+    <div class="letter-paper">
+        <div class="heart"></div>
+
+        <h1 class="salutation">致我亲爱的大宝宝：</h1>
+
+        <div class="letter-content">
+            <p>今天写这封信，是想再认真地对你说一声：对不起。</p>
+
+            <p>前几天，我和一位知己聊到了我们之间现在存在的一些问题。听了他的一些建议，我做了一些事。我知道你，很多事宁愿默默放在心里，也不愿轻易说出来。但我总觉得，恋爱不应该是这样的——两个人之间，应该更坦然，更贴近。所以这一次，我选择了主动。</p>
+
+            <p>整件事的起因，从我这边来看，是你似乎总在担心：因为我年轻，未来还有太多可能，会不会现在喜欢着你，将来遇到更好的人，就转身离开。所以你也在默默为自己的以后做打算，这我理解。我也一直努力想办法，试图和你沟通解决，可每次我说的话，都像石沉大海，没有一点回音……说实话，这让我挺委屈的。</p>
+
+            <p>我知道，不同年龄对爱情的看法会有差异。但人活着，不就图个"我乐意"吗？至少我是这么想的——只要认定一个人，喜欢上了，我就不会轻易放弃。一直以来，我却总忍不住怀疑你，因为你常常不对我说实话。也许你是怕我担心，也许你不想被我反复追问，就编个理由搪塞过去。可当我明明知道答案、却还是想听你亲口说出来的时候，你的话却和事实对不上……你有没有想过，这样反而更伤我？</p>
+
+            <p>这些年，你一个人走过来，不容易。我曾经也不理解，为什么这个圈子里有些大叔总是徘徊不定——本该认真生活的年纪，却把时间耗在没有结果的寻找中。直到慢慢了解你，我才明白，你是真的被人伤透了，对什么都缺乏安全感，只信自己。所以你把自己包裹起来，不愿任何人靠近你的过去（说到底，还是不够信任我吧）。可人终究是怕孤独的，所以你仍怀着一丝希望，想着也许还能遇到真爱。</p>
+
+            <p>但就算真的再遇到了，难道不需要重新花时间了解、重新磨合、重新经历一遍忐忑和犹豫吗？既然我们已经相遇，为什么不好好珍惜眼前呢？</p>
+
+            <p>我知道你没有做对不起我的事，我也尊重你有自己的社交。就像我，虽然社交圈可能比你大很多，但我从来都清楚：我是有主的人。有人对我暧昧，问我有没有对象，我都会毫不犹豫地说"有"。我不会隐藏，更不会含糊——因为我认定你了。</p>
+
+            <p>我也希望你能这样。我明白你需要时间考察我，其实我也在观察你。我对你的"考察"差不多有答案了，但我不知道，你还要多久才愿意放下防备，真正地、坦荡地和我在一起？不要害怕别人的眼光，别被世俗牵绊。我们把日子过好，比什么都重要。</p>
+
+            <p>我一直相信，我们可以走到最后。我想多陪陪你，不想再让你一个人孤单、不开心，所有事都自己硬扛。你越是不说，我越是心疼。我知道男人都好面子，有些关心的话我憋着没讲，怕你又说"没事，别瞎操心"。</p>
+
+            <p>是，我是在慢慢改掉"过度操心"的习惯。但说到底，你是我爱的人，我不操心你，操心谁呢？生活上有父母照顾你，可是精神上呢？当你只想安静放松的时候，难道不希望有个人能说说话、聊聊天吗？所以我才会主动找你，想了解你的过去，想聊我们的将来，想明白你如何看待爱情——我只是希望，你能慢慢习惯生命中有我。</p>
+
+            <p>这些话，其实我不该一再重复。我的心意你能感受到，我的为人你也清楚。你顾虑年龄，顾虑周围人的眼光，同事闲聊时一句无意的话都可能影响你……这些我都懂。你不说，我也不逼你。可就算我能理解，我还是会难受、会觉得委屈——也许，这就是爱吧。</p>
+
+            <p>我不想再唠叨这些了。但我真的希望，有一天，你可以主动和我聊聊我们的未来。哪怕接下来我要备考，可能陪你多了，成绩会受影响，甚至考不上理想的学校……但从长远看，这些都不如"我想好好照顾你"来得重要。</p>
+
+            <p>别觉得我傻，别认为我为了爱情不顾前途。我非常清楚自己是什么样的人：只有我真正喜欢的人，我才愿意付出。我不容易被感动，我的喜欢门槛很高。所以你不用担心我会跟别人跑——我的性格就摆在这。</p>
+
+            <p>但你呢？我可能还不够懂你。从我的角度看，你似乎比较容易受新鲜感影响……所以我总害怕，你会因为一时疲惫、觉得这段感情太磨人，就轻易放手。</p>
+
+            <p>说实话，现在的关键在你。只要你愿意，我们可以很快度过磨合期，越来越恩爱。所以这段时期什么时候结束，其实取决于你。</p>
+
+            <p>能找到一个真心相伴的人，真的很不容易。宝贝，我希望你好好珍惜，也认真改变——就像我之前和你提过，那两件让我特别委屈的事。</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>我21-27岁</h3>
+                    <p>努力学习、工作拼搏</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>你39-45岁</h3>
+                    <p>好好工作、注意身体、认真生活</p>
+                </div>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>等我30岁之后</h3>
+                    <p>我来好好照顾你，我们住在一起，一起去很多地方旅行</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>而你48岁之后</h3>
+                    <p>什么都不用操心，只要跟着我，享福就好了</p>
+                </div>
+            </div>
+
+            <p>这些年来，你真的辛苦了。</p>
+
+            <p>不管怎样，我都在这儿，稳稳地陪着你。</p>
+        </div>
+
+        <div class="closing">永远爱你的</div>
+        <div class="signature">小叶</div>
+        <div class="date">2025年8月20日</div>
+    </div>
+</div>
+</body>
+</html>
